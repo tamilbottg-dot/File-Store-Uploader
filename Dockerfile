@@ -1,23 +1,24 @@
-FROM python:3.10-slim-buster
+FROM python:3.10-slim-bookworm
 
-# Update and install required packages (ffmpeg is crucial for media bots)
-RUN apt-get update -y && apt-get install -y \
+ENV PYTHONDONTWRITEBYTECODE=1
+ENV PYTHONUNBUFFERED=1
+ENV PIP_NO_CACHE_DIR=1
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
     ffmpeg \
     git \
     wget \
     curl \
     unzip \
-    && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /app
 
-# Copy requirement and install
-COPY requirements.txt requirements.txt
-RUN pip3 install -U --no-cache-dir -r requirements.txt
+COPY requirements.txt .
 
-# Copy all source files
+RUN python -m pip install --upgrade pip setuptools wheel
+RUN pip install -r requirements.txt
+
 COPY . .
 
-# Run the command (skipping start.sh layout so pip install isn't re-run every container boot)
-CMD ["python3", "main.py"]
+CMD ["python", "main.py"]
