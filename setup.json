@@ -1,0 +1,15 @@
+{
+  "bots": [
+    {
+      "session": "file_store_bot",
+      "token": "7458573208:AAGb7pTOjVlO-tYtefXHeMyTjw4v6TAkWLQ",
+      "api_id": 21466178,
+      "api_hash": "be8adf366f11534c50aec36d1eded181",
+      "db_uri": "mongodb+srv://kgf97781_db_user:tPJgPDzG75xrEHJR@cluster0.awbenpu.mongodb.net/?appName=Cluster0",
+      "db_name": "kgf97781_db_user",
+      "db_channel": -1004461682860,
+      "admins": [5816147544],
+      "fsubs": []
+    }
+  ]
+}
