@@ -1,5 +1,4 @@
-{
-  "bots": [
+ [
     {
       "session": "file_store_bot",
       "token": "7458573208:AAGb7pTOjVlO-tYtefXHeMyTjw4v6TAkWLQ",
@@ -12,4 +11,3 @@
       "fsubs": []
     }
   ]
-}
